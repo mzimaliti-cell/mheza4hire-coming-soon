@@ -13,17 +13,16 @@
     if(entered !== REQUIRED){
       alert("Incorrect password.");
       sessionStorage.removeItem("mheza_pw");
-      window.location.href="about:blank";
+      window.location.href = "about:blank";
     }
   } catch(e){ /* ignore */ }
-
-  // Placeholder for Book/Pay button
+  // Book/Pay button
   var btn = document.getElementById("bookBtn");
   if(btn){
     btn.addEventListener("click", function(e){
       e.preventDefault();
-      // Replace with actual iKhokha Pay Link when ready:
-      var payLink = https://pay.ikhokha.com/mheza-engineering/mpr/mheza4hire  
+      // Use the iKhokha Payment Gateway link (not the HTML embed)
+      var payLink = "https://pay.ikhokha.com/mheza-engineering/mpr/mheza4hire";
       window.location.href = payLink;
     });
   }
