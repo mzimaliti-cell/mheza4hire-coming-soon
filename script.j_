@@ -1,0 +1,30 @@
+// Lightweight preview password gate (client-side).
+// NOTE: This is only to discourage casual access. Not secure.
+// For proper protection, use Next.js + Vercel Edge Middleware.
+(function(){
+  var REQUIRED = "Mheza2025"; // change anytime
+  try {
+    var entered = sessionStorage.getItem("mheza_pw") || "";
+    if(!entered){
+      entered = prompt("Enter preview password:");
+      if(!entered){ window.location.href="about:blank"; return; }
+      sessionStorage.setItem("mheza_pw", entered);
+    }
+    if(entered !== REQUIRED){
+      alert("Incorrect password.");
+      sessionStorage.removeItem("mheza_pw");
+      window.location.href="about:blank";
+    }
+  } catch(e){ /* ignore */ }
+
+  // Placeholder for Book/Pay button
+  var btn = document.getElementById("bookBtn");
+  if(btn){
+    btn.addEventListener("click", function(e){
+      e.preventDefault();
+      // Replace with actual iKhokha Pay Link when ready:
+      var payLink = "#"; 
+      window.location.href = payLink;
+    });
+  }
+})();
