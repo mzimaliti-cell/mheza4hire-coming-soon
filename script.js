@@ -23,7 +23,7 @@
     btn.addEventListener("click", function(e){
       e.preventDefault();
       // Replace with actual iKhokha Pay Link when ready:
-      var payLink = "#"; 
+      var payLink = https://api.ikhokha.com/permalink/v1/ecommStoreName/mheza-engineering/buy-button/mheza4hire/html 
       window.location.href = payLink;
     });
   }
